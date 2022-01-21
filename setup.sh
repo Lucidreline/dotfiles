@@ -16,17 +16,14 @@ chsh -s /usr/bin/zsh
 
 
 # install oh-my-zsh
-sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
-cp .zshrc ~/
+git clone https://github.com/ohmyzsh/ohmyzsh.git ~/.oh-my-zsh
+
 
 # oh my zsh plugins
 git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions # auto suggestions
 
 git clone https://github.com/reobin/typewritten.git $ZSH_CUSTOM/themes/typewritten # theme
 
-ln -s "$ZSH_CUSTOM/themes/typewritten/typewritten.zsh-theme" "$ZSH_CUSTOM/themes/typewritten.zsh-theme"
-
-ln -s "$ZSH_CUSTOM/themes/typewritten/async.zsh" "$ZSH_CUSTOM/themes/async"
 
 # install btm (view cpu, ram, etc usage)
 curl -LO https://github.com/ClementTsang/bottom/releases/download/0.6.6/bottom_0.6.6_amd64.deb
