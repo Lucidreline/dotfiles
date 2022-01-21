@@ -2,8 +2,18 @@
 sudo apt update -y
 sudo apt upgrade -y
 
+
 # install apt packages
-sudo apt install neovim tmux neofetch git default-jre curl -y 
+sudo apt install neovim tmux neofetch git default-jre curl zsh -y 
+
+# copy dot files
+cp .zshrc ~/
+mkdir ~/.config/nvim -p
+cp .config/nvim/init.vim > ~/.config/nvim/
+
+# make zsh the default
+chsh -s /usr/bin/zsh
+
 
 # install oh-my-zsh
 sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
@@ -41,12 +51,10 @@ sudo chmod 666 /var/run/docker.sock
 # nvm
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash
 
-# copy dot files
-cat .config/fish/config.fish > ../.config/fish/config.fish
-cat .config/nvim/init.vim > ../.config/nvim/init.vim
 
 
 # git config
 git config --global user.email "casta.ma502@gmail.com"
 git config --global user.name "Lucidreline"
 
+exit
