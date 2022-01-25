@@ -7,16 +7,16 @@ sudo apt upgrade -y
 sudo apt install neovim tmux neofetch git default-jre curl zsh -y 
 
 # copy dot files
-cp .zshrc ~/
-mkdir ~/.config/nvim -p
-cp .config/nvim/init.vim > ~/.config/nvim/
+cp .zshrc $HOME
+mkdir $HOME/.config/nvim -p
+cp .config/nvim/init.vim $HOME/.config/nvim/init.vim
 
 # make zsh the default
 chsh -s /usr/bin/zsh
 
 
 # install oh-my-zsh
-git clone https://github.com/ohmyzsh/ohmyzsh.git ~/.oh-my-zsh
+git clone https://github.com/ohmyzsh/ohmyzsh.git $HOME/.oh-my-zsh
 
 
 # oh my zsh plugins
@@ -53,6 +53,9 @@ sudo chmod 666 /var/run/docker.sock
 # nvm
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash
 
+# neovim plugin manager
+sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
+       https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
 
 
 # git config
