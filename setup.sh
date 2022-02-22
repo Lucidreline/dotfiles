@@ -4,7 +4,7 @@ sudo apt upgrade -y
 
 
 # install apt packages
-sudo apt install neovim tmux neofetch git default-jre curl zsh -y 
+sudo apt install neovim tmux neofetch git default-jre curl zsh libaa-bin -y 
 
 # copy dot files
 cp .zshrc $HOME
@@ -25,6 +25,11 @@ git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-m
 # theme
 mkdir -p "$HOME/.zsh"
 git clone https://github.com/reobin/typewritten.git "$HOME/.zsh/typewritten"
+
+# install onefetch
+sudo add-apt-repository ppa:o2sh/onefetch
+sudo apt-get update
+sudo apt-get install onefetch
 
 
 # install btm (view cpu, ram, etc usage)
